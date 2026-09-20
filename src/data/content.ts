@@ -13,6 +13,110 @@ export const profile = {
     "Full Stack Engineer with close to a year of production experience across React, TypeScript, Go, Node.js and PostgreSQL. I've delivered 17+ modules for a live hospital management system and independently designed, built and shipped two production platforms with real-time features and live payments. Open to full-time remote Full Stack Developer roles.",
 };
 
+export const personaData = {
+  hr: {
+    headline: "Full Stack Software Engineer",
+    subheading: "Production-ready engineer with 1 year experience in Go, React & PostgreSQL",
+    tagline:
+      "Reliable Full Stack Developer with production experience in enterprise healthcare systems and consumer web platforms. Immediate joiner, open to remote full-time positions.",
+    summary:
+      "Full Stack Engineer with 1 year of production experience across React, Next.js, TypeScript, Go, Node.js, and PostgreSQL. Delivered 17+ modules for a live hospital management system and independently designed and shipped two complete production platforms with live payments. Holds an MCA degree (8.1 CGPA) and is ready for immediate onboarding.",
+    primaryCta: {
+      label: "Download Resume",
+      href: "/Mohanraj_S_Resume.pdf",
+      isDownload: true,
+      external: false,
+    },
+    secondaryCta: {
+      label: "Schedule Interview",
+      href: "#contact",
+      isDownload: false,
+      external: false,
+    },
+    stats: [
+      { value: "1 Year", label: "Production experience in Go, React & Postgres" },
+      { value: "17+", label: "Enterprise modules shipped in live HIMS" },
+      { value: "8.1", label: "MCA CGPA · Dr. SNS Rajalakshmi College" },
+      { value: "Immediate", label: "Availability for remote full-time roles" },
+    ],
+    highlights: [
+      "Immediate availability with no notice period constraints",
+      "Proven on-the-job promotion from Intern to Software Engineer — I within 3 months",
+      "Full stack proficiency: Go, React, Next.js, Node.js, TypeScript, PostgreSQL",
+      "Strong academic foundation with MCA (8.1 CGPA) & BCA degrees",
+    ],
+    contactMessage:
+      "I am actively interviewing and open to full-time remote Full Stack Developer roles. If you're looking for a disciplined engineer who ships fast and writes clean code, my inbox is open.",
+  },
+  manager: {
+    headline: "Full Stack & Systems Engineer",
+    subheading: "Go Concurrency · Real-time MQTT/Socket.io · PostgreSQL Tuning · Playwright E2E",
+    tagline:
+      "I architect resilient full-stack systems — Golang backends, real-time event streaming, tuned database schemas, and end-to-end automated testing suites.",
+    summary:
+      "Engineer experienced in both distributed backend architectures and responsive web applications. Hands-on with Go concurrency, normalized PostgreSQL schemas with indexed queries, Redis caching, MQTT sensor telemetry, and idempotent payment webhooks with server-side HMAC validation. Committed to high code quality and test reliability with Playwright suites.",
+    primaryCta: {
+      label: "Review Architecture",
+      href: "#projects",
+      isDownload: false,
+    },
+    secondaryCta: {
+      label: "Inspect GitHub Code",
+      href: "https://github.com/EcomMohanraj",
+      isDownload: false,
+      external: true,
+    },
+    stats: [
+      { value: "16/16", label: "Automated E2E Playwright tests passing" },
+      { value: "17+", label: "HIMS modules built in Go & PostgreSQL" },
+      { value: "Real-time", label: "MQTT & Socket.io distributed streaming" },
+      { value: "Zero Loss", label: "HMAC webhook idempotency for live payments" },
+    ],
+    highlights: [
+      "Secured API endpoints and migrated token auth to httpOnly cookies with strict rate limiting",
+      "Architected a 4-role Socket.io real-time backbone without expensive third-party APIs",
+      "Tuned normalized PostgreSQL schemas, joins, and indexing for enterprise hospital reporting",
+      "Engineered crash-detection sensor algorithms on ESP32-S3 firmware with FastAPI and Redis",
+    ],
+    contactMessage:
+      "Looking for an engineer who understands system design trade-offs, database optimization, and test automation? Let's connect to discuss technical challenges and architectural goals.",
+  },
+  client: {
+    headline: "End-to-End Product Engineer",
+    subheading: "Taking web apps from concept to production with live payments & 99+ PageSpeed",
+    tagline:
+      "I partner with business owners and founders to build, launch, and scale complete production platforms — handling everything from UI design to cloud deployments.",
+    summary:
+      "Solo full-stack developer who translates business requirements into revenue-generating web applications. Shipped a 4-role cloud kitchen ordering system with live GPS tracking, and built an online agri-store from scratch handling real orders with Razorpay and achieving a 100/100 Google PageSpeed score. Zero tech debt, fast turnaround, and cost-efficient architecture.",
+    primaryCta: {
+      label: "View Live Platforms",
+      href: "#projects",
+      isDownload: false,
+      external: false,
+    },
+    secondaryCta: {
+      label: "Discuss Your Project",
+      href: "#contact",
+      isDownload: false,
+      external: false,
+    },
+    stats: [
+      { value: "2", label: "Complete platforms built & shipped solo" },
+      { value: "100/100", label: "Google PageSpeed desktop performance score" },
+      { value: "100%", label: "Automated payment, order & SMS pipelines" },
+      { value: "Zero Cost", label: "Smart GPS architecture without costly Map APIs" },
+    ],
+    highlights: [
+      "End-to-end execution: requirements, database, frontend, backend, payments & deployment",
+      "Direct cost savings: engineered custom GPS tracking to eliminate recurring Google Maps fees",
+      "High performance: lightweight Next.js and WebP optimization yielding 93-100 PageSpeed",
+      "Production reliability: live custom domains, SSL certificates, automated order notifications",
+    ],
+    contactMessage:
+      "Need a fast, dependable engineer to build your next web application, e-commerce store, or MVP? Let's discuss your timeline, budget, and product goals.",
+  },
+};
+
 export const skills = [
   {
     group: "Languages & Frontend",
@@ -76,6 +180,11 @@ export const projects = [
     liveUrl: "https://yazhisaicloudkitchen.in",
     githubUrl: "https://github.com/EcomMohanraj/cloud-kitchen",
     stack: ["Next.js", "Express", "Prisma", "PostgreSQL (Neon)", "Socket.io", "Razorpay", "Resend"],
+    personaBadges: {
+      hr: "4-Role Enterprise Architecture · Live Production · Full Stack",
+      manager: "Socket.io Backbone · HMAC Webhook Idempotency · 16 Playwright E2E Tests",
+      client: "Live Custom Domain · Live Payments · Replaced Paid Map APIs with Custom GPS",
+    },
     problem:
       "A cloud kitchen needed a slot-based pre-ordering system that customers, kitchen staff, delivery riders and the owner could all use in real time — without the cost of a food-delivery-app subscription.",
     approach: [
@@ -101,6 +210,11 @@ export const projects = [
     liveUrl: "https://milkymushroom.in",
     githubUrl: undefined,
     stack: ["Next.js 15", "Supabase (PostgreSQL)", "Tailwind CSS", "Razorpay", "Resend", "Fast2SMS"],
+    personaBadges: {
+      hr: "Solo Project Delivery · Next.js 15 & Supabase · 100 PageSpeed",
+      manager: "Supabase RLS · WebP Image Pipeline · Webhook Sync · Zero Regressions",
+      client: "Turnkey Online Store · Automated Order SMS/Email · Verified Buyer Reviews",
+    },
     problem:
       "A family mushroom-cultivation business needed an online store to sell directly to customers, with payments, order tracking and trustworthy reviews — with no existing engineering team.",
     approach: [
@@ -125,6 +239,11 @@ export const projects = [
     liveUrl: undefined,
     githubUrl: "https://github.com/EcomMohanraj/smartbike-backend",
     stack: ["ESP32-S3", "FastAPI", "PostgreSQL", "Redis", "Docker", "Flutter"],
+    personaBadges: {
+      hr: "Hardware to Mobile · Python FastAPI & Flutter · Full Pipeline",
+      manager: "ESP32-S3 I2C · 2.5g Acceleration Algorithm · Redis Caching · Dockerized",
+      client: "Tested with Physical Hardware · Zero False Positives in Road Trials",
+    },
     problem:
       "Explored whether a low-cost hardware module could detect motorcycle crashes and track location in real time, end-to-end from sensor to mobile app.",
     approach: [
@@ -143,15 +262,15 @@ export const projects = [
 
 export const education = [
   {
-    degree: "MCA",
-    school: "Dr. SNS Rajalakshmi College, Coimbatore",
+    degree: "MCA (Master of Computer Applications)",
+    school: "Dr. SNS Rajalakshmi College of Arts & Science, Coimbatore",
     detail: "CGPA: 8.1",
-    year: "2025",
+    year: "2023 — 2025",
   },
   {
-    degree: "BCA",
+    degree: "BCA (Bachelor of Computer Applications)",
     school: "St. Joseph's College, Tiruchirappalli",
-    detail: "",
-    year: "2023",
+    detail: "Graduated with Distinction",
+    year: "2020 — 2023",
   },
 ];
