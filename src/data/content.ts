@@ -244,7 +244,7 @@ export const education = [
     degree: "MCA (Master of Computer Applications)",
     school: "Dr. SNS Rajalakshmi College of Arts & Science, Coimbatore",
     detail: "CGPA: 8.1",
-    period: "2023 — 2025",
+    period: "2025",
   },
   {
     degree: "BCA (Bachelor of Computer Applications)",
