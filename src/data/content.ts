@@ -28,12 +28,13 @@ export const experience = [
     company: "Sanrado Techsolutions LLP, Tiruppur",
     location: "Tiruppur, Tamil Nadu, India",
     period: "Jul 2025 – May 2026",
-    promotionCallout: "Promoted from Intern to Software Engineer – I within 3 months based on performance",
+    promotionCallout: "Promoted from Software Developer Intern to Software Engineer I within 3 months based on performance.",
     roles: [
       {
         title: "Software Engineer – I",
         period: "Oct 2025 – May 2026",
         highlights: [
+          "Promoted from Software Developer Intern to Software Engineer I within 3 months based on performance.",
           "Delivered 17+ full-stack modules for a production Healthcare Information Management System (HIMS).",
           "Worked with React, TypeScript, Golang and PostgreSQL.",
           "Aligned frontend TypeScript models with backend seed configurations to eliminate recurring data-mismatch defects.",
@@ -48,8 +49,7 @@ export const experience = [
         title: "Software Developer Intern",
         period: "Jul 2025 – Sep 2025",
         highlights: [
-          "Contributed to full-stack feature development and API integration for the Healthcare Information Management System.",
-          "Promoted to full-time Software Engineer – I in October 2025 following high-velocity module delivery and reliable system design contributions.",
+          "Contributed to full-stack feature development and API integration for the Healthcare Information Management System using React, Next.js, JavaScript, Golang, and PostgreSQL.",
         ],
       },
     ],
@@ -140,11 +140,10 @@ export const yazhisaiProject = {
     { layer: "Real-time Layer", tech: "Socket.io", note: "Instant event broadcast for order states & live GPS updates" },
     { layer: "Payment Gateway", tech: "Razorpay", note: "Secure checkout with server-side HMAC verification & idempotent webhooks" },
     { layer: "Email Notifications", tech: "Resend", note: "Transactional receipts & status updates" },
-    { layer: "Auth & Security", tech: "JWT with HTTP-only cookies", note: "Route guards & express rate limiting against brute force" },
-    { layer: "E2E Testing Suite", tech: "Playwright", note: "16-case suite covering full ordering lifecycle across all 4 roles" },
+    { layer: "Auth & Security", tech: "JWT with HTTP-only cookies", note: "Route guards & rate limiting on all auth endpoints" },
   ],
   testingAchievement:
-    "16-case Playwright E2E suite covering the full ordering lifecycle across all four roles.",
+    "Implemented a 16-case Playwright E2E test suite covering the complete ordering workflow across all four roles.",
 };
 
 export const milkyMushroomProject = {
@@ -250,7 +249,7 @@ export const education = [
   {
     degree: "BCA (Bachelor of Computer Applications)",
     school: "St. Joseph's College, Tiruchirappalli",
-    detail: "Graduated with Distinction",
-    period: "2020 — 2023",
+    detail: "",
+    period: "2023",
   },
 ];

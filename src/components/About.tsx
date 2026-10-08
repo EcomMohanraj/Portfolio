@@ -70,8 +70,8 @@ export default function About() {
                     {edu.school}
                   </span>
                   <div className="flex items-center justify-between mt-1 text-xs font-mono">
-                    <span className="text-accent">{edu.detail}</span>
-                    <span className="text-muted">{edu.period}</span>
+                    {edu.detail && <span className="text-accent">{edu.detail}</span>}
+                    <span className={`text-muted ${!edu.detail ? "ml-auto" : ""}`}>{edu.period}</span>
                   </div>
                 </div>
               ))}

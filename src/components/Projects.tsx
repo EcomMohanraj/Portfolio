@@ -122,7 +122,7 @@ export default function Projects() {
             </div>
 
             <p className="text-xs text-muted mb-4">
-              Real-time state synchronization ensuring zero dropped orders between distinct actor roles:
+              Real-time state synchronization across all four user roles.
             </p>
 
             {/* Desktop Flow (horizontal) / Mobile Flow (vertical/grid) */}
