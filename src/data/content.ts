@@ -202,7 +202,36 @@ export const milkyMushroomProject = {
     "Owned the complete product lifecycle: Architecture → Development → Testing → Deployment → Production.",
 };
 
-export const featuredProjects = [yazhisaiProject, milkyMushroomProject];
+export const tnBikeRaceProject = {
+  id: "tn-bike-race",
+  title: "TN Bike Race",
+  subtitle: "A 3D motorcycle racing game for Android, built solo in Unity across 10 stages",
+  badge: "In Google Play Review",
+  type: "Personal Project",
+  position: "Game Developer",
+  year: "2026",
+  liveUrl: null, // Not publicly released yet: in Google Play production review
+  githubUrl: null,
+  releaseStatus: "Coming Soon to Google Play",
+  description: "A 3D motorcycle racing game for Android, built solo in Unity across 10 stages.",
+  problem:
+    "Wanted to build and independently publish a complete 3D racing game end-to-end — game design, physics, AI opponents, and a real Play Store release pipeline — not just a tech demo.",
+  stack: ["Unity", "C#", "Android", "Google Play Console"],
+  displayBadges: ["Unity", "C#", "Android", "Google Play Console"],
+  highlights: [
+    "Designed and built a 3D motorcycle racing game in Unity (C#) with 10 distinct stages: city, highway, village, off-road, forest, hill, mountain, mud, desert, and a mixed final stage",
+    "Implemented core systems iteratively in milestones: ride/checkpoint/finish loop, AI racers and traffic, a bike garage with multiple selectable bikes, and local save/progress persistence",
+    "Optimized all 10 stages to run at a stable 60 FPS on real Android hardware",
+    "Set up a Google Play Console developer account and took the game through closed testing, now in the production review process for public release",
+  ],
+  impactStats: [
+    "10 stages built and phone-tested at 60 FPS",
+    "Built solo from game design to Play Store release pipeline",
+    "In Google Play closed testing, production review in progress",
+  ],
+};
+
+export const featuredProjects = [yazhisaiProject, milkyMushroomProject, tnBikeRaceProject];
 
 export const skillsData = {
   languages: ["TypeScript", "JavaScript", "Golang", "SQL"],

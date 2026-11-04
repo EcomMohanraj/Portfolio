@@ -10,13 +10,16 @@ import {
   Server,
   Layers,
   Sparkles,
+  Gamepad2,
+  Clock,
 } from "lucide-react";
 import { GithubIcon } from "@/components/icons";
-import { yazhisaiProject, milkyMushroomProject } from "@/data/content";
+import { yazhisaiProject, milkyMushroomProject, tnBikeRaceProject } from "@/data/content";
 
 export default function Projects() {
   const yazhisai = yazhisaiProject;
   const milkyMushroom = milkyMushroomProject;
+  const tnBikeRace = tnBikeRaceProject;
 
   return (
     <section
@@ -28,15 +31,15 @@ export default function Projects() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
         <p className="section-label">02. Featured Projects</p>
         <span className="text-xs font-mono text-muted bg-surface-2 px-2.5 py-1 rounded-md border border-border self-start sm:self-auto">
-          2 Deployed Production Platforms
+          2 Deployed Platforms · 1 Game in Review
         </span>
       </div>
 
       <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3">
-        Engineered &amp; Deployed Systems
+        Engineered Platforms &amp; Products
       </h2>
       <p className="text-sm sm:text-base text-muted max-w-2xl mb-10 sm:mb-12">
-        Real-world platforms with multi-role workflows, live payments, real-time communication, and automated E2E testing.
+        Two deployed platforms with multi-role workflows, live payments, real-time communication, and automated E2E testing, plus a solo-built Android game in Google Play review.
       </p>
 
       <div className="space-y-12 sm:space-y-16">
@@ -392,6 +395,104 @@ export default function Projects() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </article>
+
+        {/* ==============================================================
+            FEATURED PROJECT #3: TN BIKE RACE
+            Not publicly released: no live link until the Play listing exists.
+            ============================================================== */}
+        <article className="tech-card rounded-2xl p-5 sm:p-8 md:p-9 relative overflow-hidden">
+          {/* Header row */}
+          <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-4 pb-6 border-b border-border">
+            <div>
+              <div className="flex flex-wrap items-center gap-2.5 mb-2">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-semibold bg-[#f59e0b]/15 text-[#fbbf24] border border-[#f59e0b]/30 font-mono">
+                  <Clock size={13} className="shrink-0" />
+                  {tnBikeRace.badge}
+                </span>
+                <span className="text-xs font-mono text-muted px-2.5 py-1 rounded-md bg-surface-2 border border-border">
+                  {tnBikeRace.type} · {tnBikeRace.year}
+                </span>
+              </div>
+
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground">
+                {tnBikeRace.title}
+              </h3>
+              <p className="text-xs sm:text-sm text-accent font-medium mt-1">
+                Position: {tnBikeRace.position}
+              </p>
+              <p className="text-xs sm:text-sm text-muted-light mt-2 max-w-2xl leading-relaxed">
+                {tnBikeRace.description}
+              </p>
+            </div>
+
+            {/* Release status: deliberately not a link */}
+            <div className="flex flex-wrap items-center gap-2.5 shrink-0 self-start lg:self-auto">
+              <span className="inline-flex items-center justify-center gap-1.5 text-xs font-mono text-muted px-3 py-2.5 rounded-lg bg-surface-2 border border-border">
+                {tnBikeRace.releaseStatus}
+              </span>
+            </div>
+          </div>
+
+          {/* Technology Badges */}
+          <div className="my-6">
+            <span className="text-xs font-mono text-muted block mb-2">Technology Stack:</span>
+            <div className="flex flex-wrap gap-2">
+              {tnBikeRace.displayBadges.map((badge) => (
+                <span
+                  key={badge}
+                  className="font-mono text-xs px-2.5 py-1 rounded-md bg-surface-2 border border-border text-foreground/90"
+                >
+                  {badge}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* PROBLEM */}
+          <div className="my-8 p-4 sm:p-6 rounded-xl bg-[#090b10] border border-border">
+            <span className="text-xs font-mono uppercase tracking-wider text-accent flex items-center gap-2 mb-3">
+              <Gamepad2 size={14} className="shrink-0" />
+              <span>The Problem</span>
+            </span>
+            <p className="text-xs sm:text-sm text-muted-light leading-relaxed">
+              {tnBikeRace.problem}
+            </p>
+          </div>
+
+          {/* WHAT WAS BUILT */}
+          <div className="my-8">
+            <h4 className="text-xs font-mono uppercase tracking-wider text-accent mb-3 flex items-center gap-2">
+              <CheckCircle2 size={14} className="shrink-0" />
+              <span>What I Built</span>
+            </h4>
+
+            <ul className="space-y-2.5">
+              {tnBikeRace.highlights.map((item) => (
+                <li
+                  key={item}
+                  className="p-3 rounded-lg bg-surface-2 border border-border text-xs sm:text-sm text-muted-light flex items-start gap-2 leading-relaxed"
+                >
+                  <span className="text-accent font-bold text-sm">▹</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* IMPACT */}
+          <div className="pt-6 border-t border-border">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+              {tnBikeRace.impactStats.map((stat) => (
+                <div
+                  key={stat}
+                  className="p-3 rounded-lg bg-surface-2 border border-border text-xs font-semibold text-foreground leading-relaxed"
+                >
+                  {stat}
+                </div>
+              ))}
             </div>
           </div>
         </article>
