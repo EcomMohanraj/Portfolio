@@ -124,7 +124,7 @@ export default function Hero() {
             <div className="tech-card rounded-xl p-3.5">
               <span className="text-[11px] font-mono text-muted uppercase tracking-wider block">Production Proof</span>
               <span className="text-sm font-semibold text-foreground mt-0.5 block">17+ HIMS Modules</span>
-              <span className="text-xs text-muted mt-1 block">+ 2 Deployed Full-Stack Apps</span>
+              <span className="text-xs text-muted mt-1 block">+ 3 Deployed Full-Stack Apps</span>
             </div>
           </div>
         </div>

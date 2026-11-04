@@ -222,16 +222,70 @@ export const tnBikeRaceProject = {
     "Designed and built a 3D motorcycle racing game in Unity (C#) with 10 distinct stages: city, highway, village, off-road, forest, hill, mountain, mud, desert, and a mixed final stage",
     "Implemented core systems iteratively in milestones: ride/checkpoint/finish loop, AI racers and traffic, a bike garage with multiple selectable bikes, and local save/progress persistence",
     "Optimized all 10 stages to run at a stable 60 FPS on real Android hardware",
-    "Set up a Google Play Console developer account and took the game through closed testing, now in the production review process for public release",
+    "Set up a Google Play Console developer account; the game completed closed testing and is now in Google Play production review",
   ],
   impactStats: [
     "10 stages built and phone-tested at 60 FPS",
     "Built solo from game design to Play Store release pipeline",
-    "In Google Play closed testing, production review in progress",
+    "In Google Play production review",
   ],
 };
 
-export const featuredProjects = [yazhisaiProject, milkyMushroomProject, tnBikeRaceProject];
+export const krishaPaintingsProject = {
+  id: "krisha-paintings",
+  title: "Krisha Paintings",
+  subtitle: "A business website with an admin panel for a residential and commercial painting company",
+  badge: "Live Business Website",
+  type: "Full Stack Project",
+  position: "Full Stack Developer",
+  year: "2026",
+  liveUrl: "https://painting-shop-ar6x.vercel.app",
+  githubUrl: "https://github.com/EcomMohanraj/painting-shop",
+  releaseStatus: null,
+  description: "A business website with an admin panel for a residential and commercial painting company.",
+  stack: ["Next.js", "TypeScript", "Tailwind CSS", "Neon PostgreSQL", "Cloudinary", "Vercel"],
+  displayBadges: ["Next.js", "TypeScript", "Tailwind CSS", "Neon PostgreSQL", "Cloudinary", "Vercel"],
+  highlights: [
+    "A public site with a motion-driven hero, colour fan-deck, before/after slider, gallery, testimonials and contact form",
+    "An admin panel with image upload through Cloudinary, data stored in Neon PostgreSQL",
+    "Built entirely on a free-tier stack so hosting costs nothing",
+  ],
+  impactStats: [
+    "Live on Vercel",
+    "Free-tier stack, zero hosting cost",
+    "Admin panel + contact form tested live",
+  ],
+};
+
+export const wifiJammingProject = {
+  id: "wifi-jamming-detector",
+  title: "Wi-Fi Jamming Demo and Jamming Detector",
+  subtitle: "An ESP32 proof-of-concept that demonstrates Wi-Fi jamming and detects it with a visible and audible alert",
+  badge: "Lab Proof-of-Concept",
+  type: "Internship Project, Hackup Technology, Coimbatore",
+  position: "Embedded Security",
+  year: "Dec 2024 – Mar 2025",
+  liveUrl: null,
+  githubUrl: null,
+  releaseStatus: null,
+  description:
+    "An ESP32 proof-of-concept that demonstrates Wi-Fi jamming and detects it with a visible and audible alert, built as a lab exercise for security awareness.",
+  stack: ["C++", "Arduino IDE", "ESP32 (NodeMCU)", "Breadboard prototyping"],
+  displayBadges: ["C++", "Arduino IDE", "ESP32 (NodeMCU)", "Breadboard prototyping"],
+  highlights: [
+    "A proof-of-concept Wi-Fi jamming demo and a separate jamming detector on an ESP32 NodeMCU, written in C++",
+    "A breadboard circuit with jumper wires, an LED and a buzzer that alert when jamming is detected",
+  ],
+  impactStats: ["Hardware + firmware", "Internship project", "Detection-focused"],
+};
+
+export const featuredProjects = [
+  yazhisaiProject,
+  milkyMushroomProject,
+  krishaPaintingsProject,
+  tnBikeRaceProject,
+  wifiJammingProject,
+];
 
 export const skillsData = {
   languages: ["TypeScript", "JavaScript", "Golang", "SQL"],
