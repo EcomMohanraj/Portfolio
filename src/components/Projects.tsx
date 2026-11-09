@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import {
   ExternalLink,
   ShieldCheck,
@@ -11,7 +12,6 @@ import {
   Layers,
   Sparkles,
   Gamepad2,
-  Clock,
   type LucideIcon,
 } from "lucide-react";
 import { GithubIcon } from "@/components/icons";
@@ -30,6 +30,7 @@ type ProductProject = {
   position: string;
   year: string;
   liveUrl: string | null;
+  liveLabel?: string;
   githubUrl: string | null;
   releaseStatus: string | null;
   description: string;
@@ -39,14 +40,32 @@ type ProductProject = {
   impactStats: string[];
 };
 
+/** Image paths (under public/) that were confirmed to exist at build time. */
+export type ProjectImages = {
+  icon: string | null;
+  screenshots: string[];
+};
+
+/** Plain <img> that removes itself if the file fails to load, so no broken-image icon ever shows. */
+function ProjectImage({ src, alt, className }: { src: string; alt: string; className: string }) {
+  const [failed, setFailed] = useState(false);
+  if (failed) return null;
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img src={src} alt={alt} className={className} loading="lazy" onError={() => setFailed(true)} />
+  );
+}
+
 function ProductProjectCard({
   project,
   badgeIcon: BadgeIcon,
   badgeClassName,
+  images,
 }: {
   project: ProductProject;
   badgeIcon: LucideIcon;
   badgeClassName: string;
+  images?: ProjectImages;
 }) {
   const hasActions = project.liveUrl || project.githubUrl || project.releaseStatus;
 
@@ -67,9 +86,18 @@ function ProductProjectCard({
             </span>
           </div>
 
-          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground">
-            {project.title}
-          </h3>
+          <div className="flex items-center gap-3 sm:gap-4">
+            {images?.icon && (
+              <ProjectImage
+                src={images.icon}
+                alt={`${project.title} app icon`}
+                className="h-12 w-12 sm:h-14 sm:w-14 shrink-0 rounded-xl border border-border object-cover"
+              />
+            )}
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground">
+              {project.title}
+            </h3>
+          </div>
           <p className="text-xs sm:text-sm text-accent font-medium mt-1">
             Position: {project.position}
           </p>
@@ -88,7 +116,7 @@ function ProductProjectCard({
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-4 py-2.5 text-xs sm:text-sm font-semibold text-white hover:bg-accent-hover transition-all shadow-md shadow-accent/20 cursor-pointer min-h-[44px]"
               >
-                <span>Live Demo</span>
+                <span>{project.liveLabel ?? "Live Demo"}</span>
                 <ExternalLink size={14} className="shrink-0" />
               </a>
             )}
@@ -129,6 +157,20 @@ function ProductProjectCard({
         </div>
       </div>
 
+      {/* SCREENSHOTS (only files that exist) */}
+      {images && images.screenshots.length > 0 && (
+        <div className="my-8 grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {images.screenshots.map((src, idx) => (
+            <ProjectImage
+              key={src}
+              src={src}
+              alt={`${project.title} screenshot ${idx + 1}`}
+              className="w-full h-auto rounded-xl border border-border bg-surface-2"
+            />
+          ))}
+        </div>
+      )}
+
       {/* PROBLEM */}
       {project.problem && (
         <div className="my-8 p-4 sm:p-6 rounded-xl bg-[#090b10] border border-border">
@@ -163,23 +205,25 @@ function ProductProjectCard({
       </div>
 
       {/* IMPACT */}
-      <div className="pt-6 border-t border-border">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-          {project.impactStats.map((stat) => (
-            <div
-              key={stat}
-              className="p-3 rounded-lg bg-surface-2 border border-border text-xs font-semibold text-foreground leading-relaxed"
-            >
-              {stat}
-            </div>
-          ))}
+      {project.impactStats.length > 0 && (
+        <div className="pt-6 border-t border-border">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+            {project.impactStats.map((stat) => (
+              <div
+                key={stat}
+                className="p-3 rounded-lg bg-surface-2 border border-border text-xs font-semibold text-foreground leading-relaxed"
+              >
+                {stat}
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </article>
   );
 }
 
-export default function Projects() {
+export default function Projects({ tnBikeRaceImages }: { tnBikeRaceImages?: ProjectImages }) {
   const yazhisai = yazhisaiProject;
   const milkyMushroom = milkyMushroomProject;
 
@@ -193,7 +237,7 @@ export default function Projects() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
         <p className="section-label">02. Featured Projects</p>
         <span className="text-xs font-mono text-muted bg-surface-2 px-2.5 py-1 rounded-md border border-border self-start sm:self-auto">
-          2 Commerce Platforms · 1 Live Website · 1 Game in Review · 1 Embedded Project
+          1 Game on Google Play · 2 Commerce Platforms · 1 Live Website · 1 Embedded Project
         </span>
       </div>
 
@@ -201,12 +245,22 @@ export default function Projects() {
         Engineered Platforms &amp; Products
       </h2>
       <p className="text-sm sm:text-base text-muted max-w-2xl mb-10 sm:mb-12">
-        Two deployed commerce platforms with multi-role workflows, live payments, real-time communication, and automated E2E testing, one live business website with an admin panel, a solo-built Android game in Google Play review, and an embedded security proof-of-concept.
+        A 3D Android racing game live on Google Play, two deployed commerce platforms with multi-role workflows, live payments, real-time communication, and automated E2E testing, one live business website with an admin panel, and an embedded security proof-of-concept.
       </p>
 
       <div className="space-y-12 sm:space-y-16">
         {/* ==============================================================
-            FEATURED PROJECT #1: YAZHISAI CLOUD KITCHEN
+            FEATURED PROJECT #1: TN BIKE RACE
+            ============================================================== */}
+        <ProductProjectCard
+          project={tnBikeRaceProject}
+          badgeIcon={Gamepad2}
+          badgeClassName="bg-[#10b981]/15 text-[#34d399] border-[#10b981]/30"
+          images={tnBikeRaceImages}
+        />
+
+        {/* ==============================================================
+            FEATURED PROJECT #2: YAZHISAI CLOUD KITCHEN
             ============================================================== */}
         <article className="tech-card rounded-2xl p-5 sm:p-8 md:p-9 relative overflow-hidden">
           {/* Header row */}
@@ -396,7 +450,7 @@ export default function Projects() {
         </article>
 
         {/* ==============================================================
-            FEATURED PROJECT #2: MILKY MUSHROOM – E-COMMERCE PLATFORM
+            FEATURED PROJECT #3: MILKY MUSHROOM – E-COMMERCE PLATFORM
             ============================================================== */}
         <article className="tech-card rounded-2xl p-5 sm:p-8 md:p-9 relative overflow-hidden">
           {/* Header row */}
@@ -562,22 +616,12 @@ export default function Projects() {
         </article>
 
         {/* ==============================================================
-            FEATURED PROJECT #3: KRISHA PAINTINGS
+            FEATURED PROJECT #4: KRISHA PAINTINGS
             ============================================================== */}
         <ProductProjectCard
           project={krishaPaintingsProject}
           badgeIcon={Zap}
           badgeClassName="bg-[#10b981]/15 text-[#34d399] border-[#10b981]/30"
-        />
-
-        {/* ==============================================================
-            FEATURED PROJECT #4: TN BIKE RACE
-            Not publicly released: no live link until the Play listing exists.
-            ============================================================== */}
-        <ProductProjectCard
-          project={tnBikeRaceProject}
-          badgeIcon={Clock}
-          badgeClassName="bg-[#f59e0b]/15 text-[#fbbf24] border-[#f59e0b]/30"
         />
 
         {/* ==============================================================

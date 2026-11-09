@@ -23,7 +23,7 @@ export default function About() {
         {/* Main narrative */}
         <div className="lg:col-span-7 space-y-4 text-muted-light leading-relaxed text-sm sm:text-base">
           <p>
-            I’m a Full Stack Software Engineer with production experience building web applications using React, Next.js, TypeScript, Golang, Node.js and PostgreSQL.
+            I’m a Full Stack Software Engineer and Unity Game Developer with production experience building web applications using React, Next.js, TypeScript, Golang, Node.js and PostgreSQL.
           </p>
           <p>
             I have worked on a production Healthcare Information Management System and independently built and deployed full-stack platforms involving e-commerce, real-time communication, payments, authentication and automated testing.

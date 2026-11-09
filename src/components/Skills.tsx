@@ -1,4 +1,4 @@
-import { Code2, Layout, Server, Database, Cloud, ShieldCheck, Wrench, Layers } from "lucide-react";
+import { Code2, Layout, Server, Database, Cloud, ShieldCheck, Wrench, Layers, Gamepad2 } from "lucide-react";
 import { skillsData } from "@/data/content";
 
 const skillCategories = [
@@ -31,6 +31,11 @@ const skillCategories = [
     title: "Cloud / Platforms",
     icon: Cloud,
     skills: skillsData.cloudPlatforms,
+  },
+  {
+    title: "Game & Mobile",
+    icon: Gamepad2,
+    skills: skillsData.gameMobile,
   },
   {
     title: "Testing",

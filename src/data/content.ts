@@ -1,6 +1,6 @@
 export const profile = {
   name: "Mohanraj S",
-  role: "Full Stack Software Engineer",
+  role: "Full Stack Software Engineer · Unity Game Developer",
   tagline: "Building production-ready web applications with React, Next.js, TypeScript, Golang, Node.js and PostgreSQL.",
   positioning:
     "Full Stack Software Engineer with production experience building React, Next.js, TypeScript, Golang, Node.js, and PostgreSQL applications.",
@@ -204,31 +204,31 @@ export const milkyMushroomProject = {
 
 export const tnBikeRaceProject = {
   id: "tn-bike-race",
-  title: "TN Bike Race",
-  subtitle: "A 3D motorcycle racing game for Android, built solo in Unity across 10 stages",
-  badge: "In Google Play Review",
-  type: "Personal Project",
+  title: "TN Bike Race – 3D Motorcycle Racing Game for Android",
+  badge: "Live on Google Play",
+  type: "Independent Project",
   position: "Game Developer",
-  year: "2026",
-  liveUrl: null, // Not publicly released yet: in Google Play production review
+  year: "2026 – Present",
+  liveUrl: "https://play.google.com/store/apps/details?id=com.mohanraj.tnbikerace",
+  liveLabel: "Get it on Google Play",
   githubUrl: null,
-  releaseStatus: "Coming Soon to Google Play",
-  description: "A 3D motorcycle racing game for Android, built solo in Unity across 10 stages.",
-  problem:
-    "Wanted to build and independently publish a complete 3D racing game end-to-end — game design, physics, AI opponents, and a real Play Store release pipeline — not just a tech demo.",
-  stack: ["Unity", "C#", "Android", "Google Play Console"],
-  displayBadges: ["Unity", "C#", "Android", "Google Play Console"],
+  releaseStatus: null,
+  description:
+    "A 3D bike racing game with 11 stages modelled on Tamil Nadu roads — city, highway, village, countryside, forest, hills, mountain, monsoon, desert and a tour — with career mode, garage, bike upgrades and Tamil-language signage.",
+  stack: ["Unity 6 (URP)", "C#", "Android (IL2CPP, ARM64, AAB)", "Google Play Console"],
+  displayBadges: ["Unity 6 (URP)", "C#", "Android (IL2CPP, ARM64, AAB)", "Google Play Console"],
   highlights: [
-    "Designed and built a 3D motorcycle racing game in Unity (C#) with 10 distinct stages: city, highway, village, off-road, forest, hill, mountain, mud, desert, and a mixed final stage",
-    "Implemented core systems iteratively in milestones: ride/checkpoint/finish loop, AI racers and traffic, a bike garage with multiple selectable bikes, and local save/progress persistence",
-    "Optimized all 10 stages to run at a stable 60 FPS on real Android hardware",
-    "Set up a Google Play Console developer account; the game completed closed testing and is now in Google Play production review",
+    "AI riders with traffic-aware overtaking, checkpoints and respawns, live race positions, surface-based physics, touch and tilt steering",
+    "Optimized for budget Android phones (mesh merging, texture atlases, distance culling, shadow LODs) — up to 28% fewer draw calls per stage",
+    "Custom Unity editor tools for automated full-race soak tests, checkpoint probes and render-budget checks",
+    "Published on Google Play after closed testing with 12+ testers for 14+ days and 3 feedback-driven updates (v1.0.1–v1.0.3)",
   ],
-  impactStats: [
-    "10 stages built and phone-tested at 60 FPS",
-    "Built solo from game design to Play Store release pipeline",
-    "In Google Play production review",
-  ],
+  impactStats: [] as string[],
+  // Paths under public/. Files that don't exist at build time are not rendered.
+  images: {
+    icon: "/projects/tnbikerace/icon.png",
+    screenshots: ["/projects/tnbikerace/shot1.png", "/projects/tnbikerace/shot2.png"],
+  },
 };
 
 export const krishaPaintingsProject = {
@@ -280,10 +280,10 @@ export const wifiJammingProject = {
 };
 
 export const featuredProjects = [
+  tnBikeRaceProject,
   yazhisaiProject,
   milkyMushroomProject,
   krishaPaintingsProject,
-  tnBikeRaceProject,
   wifiJammingProject,
 ];
 
@@ -317,6 +317,14 @@ export const skillsData = {
     "Razorpay API",
     "Resend",
     "Cloudinary",
+  ],
+  gameMobile: [
+    "Unity 6 (URP)",
+    "C#",
+    "Game AI",
+    "Mobile optimization",
+    "Android (IL2CPP, AAB)",
+    "Google Play Console",
   ],
   testing: ["Playwright", "E2E Testing"],
   tools: ["Git", "GitHub", "Linux", "VS Code"],
