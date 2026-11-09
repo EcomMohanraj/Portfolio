@@ -21,9 +21,9 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Mohanraj S | Full Stack Software Engineer",
+  title: "Mohanraj S | Full Stack Software Engineer · Unity Game Developer",
   description:
-    "Full Stack Software Engineer specializing in React, Next.js, TypeScript, Golang, Node.js and PostgreSQL. Explore my production experience and deployed full-stack projects.",
+    "Full Stack Software Engineer · Unity Game Developer specializing in React, Next.js, TypeScript, Golang, Node.js and PostgreSQL. Explore my production experience and deployed full-stack projects.",
   keywords: [
     "Mohanraj S",
     "Full Stack Software Engineer",
@@ -45,9 +45,9 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Mohanraj S | Full Stack Software Engineer",
+    title: "Mohanraj S | Full Stack Software Engineer · Unity Game Developer",
     description:
-      "Full Stack Software Engineer specializing in React, Next.js, TypeScript, Golang, Node.js and PostgreSQL. Explore my production experience and deployed full-stack projects.",
+      "Full Stack Software Engineer · Unity Game Developer specializing in React, Next.js, TypeScript, Golang, Node.js and PostgreSQL. Explore my production experience and deployed full-stack projects.",
     url: "https://mohanraj-portfolio-chi.vercel.app",
     siteName: "Mohanraj S Portfolio",
     type: "website",
@@ -55,9 +55,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mohanraj S | Full Stack Software Engineer",
+    title: "Mohanraj S | Full Stack Software Engineer · Unity Game Developer",
     description:
-      "Full Stack Software Engineer specializing in React, Next.js, TypeScript, Golang, Node.js and PostgreSQL. Explore my production experience and deployed full-stack projects.",
+      "Full Stack Software Engineer · Unity Game Developer specializing in React, Next.js, TypeScript, Golang, Node.js and PostgreSQL. Explore my production experience and deployed full-stack projects.",
   },
   robots: {
     index: true,

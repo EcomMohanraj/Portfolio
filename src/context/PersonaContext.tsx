@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useSyncExternalStore } from "react";
 
 export type PersonaType = "hr" | "manager" | "client";
 
@@ -52,31 +52,40 @@ interface PersonaContextType {
 
 const PersonaContext = createContext<PersonaContextType | undefined>(undefined);
 
-export function PersonaProvider({ children }: { children: React.ReactNode }) {
-  const [persona, setPersonaState] = useState<PersonaType>("hr");
-  const [mounted, setMounted] = useState(false);
+const STORAGE_KEY = "portfolio_persona";
+const listeners = new Set<() => void>();
 
-  useEffect(() => {
-    setMounted(true);
-    const saved = localStorage.getItem("portfolio_persona") as PersonaType | null;
-    if (saved && (saved === "hr" || saved === "manager" || saved === "client")) {
-      setPersonaState(saved);
-    }
-  }, []);
+function subscribe(onChange: () => void) {
+  listeners.add(onChange);
+  window.addEventListener("storage", onChange);
+  return () => {
+    listeners.delete(onChange);
+    window.removeEventListener("storage", onChange);
+  };
+}
+
+function readSavedPersona(): PersonaType {
+  const saved = localStorage.getItem(STORAGE_KEY);
+  return saved === "hr" || saved === "manager" || saved === "client" ? saved : "hr";
+}
+
+// Server render and hydration always use "hr"; the saved choice is applied on the client afterwards.
+const serverPersona = (): PersonaType => "hr";
+
+export function PersonaProvider({ children }: { children: React.ReactNode }) {
+  const persona = useSyncExternalStore(subscribe, readSavedPersona, serverPersona);
 
   const setPersona = (p: PersonaType) => {
-    setPersonaState(p);
-    if (typeof window !== "undefined") {
-      localStorage.setItem("portfolio_persona", p);
-    }
+    localStorage.setItem(STORAGE_KEY, p);
+    listeners.forEach((notify) => notify());
   };
 
   return (
     <PersonaContext.Provider
       value={{
-        persona: mounted ? persona : "hr",
+        persona,
         setPersona,
-        config: PERSONA_CONFIGS[mounted ? persona : "hr"],
+        config: PERSONA_CONFIGS[persona],
       }}
     >
       {children}

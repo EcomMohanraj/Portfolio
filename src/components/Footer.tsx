@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="mx-auto max-w-5xl px-4 sm:px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-muted">
         <div>
           <span>© {new Date().getFullYear()} {profile.name}. </span>
-          <span className="text-muted/70">Full Stack Software Engineer.</span>
+          <span className="text-muted/70">Full Stack Software Engineer · Unity Game Developer</span>
         </div>
 
         <div className="flex items-center gap-4">
