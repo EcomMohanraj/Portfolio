@@ -31,6 +31,7 @@ type ProductProject = {
   year: string;
   liveUrl: string | null;
   liveLabel?: string;
+  extraLinks?: { label: string; url: string }[];
   githubUrl: string | null;
   releaseStatus: string | null;
   description: string;
@@ -67,7 +68,9 @@ function ProductProjectCard({
   badgeClassName: string;
   images?: ProjectImages;
 }) {
-  const hasActions = project.liveUrl || project.githubUrl || project.releaseStatus;
+  const hasActions =
+    project.liveUrl || project.githubUrl || project.releaseStatus || project.extraLinks?.length;
+  const [mainShot, ...otherShots] = images?.screenshots ?? [];
 
   return (
     <article className="tech-card rounded-2xl p-5 sm:p-8 md:p-9 relative overflow-hidden">
@@ -121,6 +124,19 @@ function ProductProjectCard({
               </a>
             )}
 
+            {project.extraLinks?.map((link) => (
+              <a
+                key={link.url}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-surface-2 border border-border px-4 py-2.5 text-xs sm:text-sm font-semibold text-foreground hover:border-accent/40 hover:bg-surface transition-all cursor-pointer min-h-[44px]"
+              >
+                <span>{link.label}</span>
+                <ExternalLink size={14} className="shrink-0" />
+              </a>
+            ))}
+
             {project.githubUrl && (
               <a
                 href={project.githubUrl}
@@ -158,16 +174,25 @@ function ProductProjectCard({
       </div>
 
       {/* SCREENSHOTS (only files that exist) */}
-      {images && images.screenshots.length > 0 && (
-        <div className="my-8 grid grid-cols-1 sm:grid-cols-2 gap-3">
-          {images.screenshots.map((src, idx) => (
-            <ProjectImage
-              key={src}
-              src={src}
-              alt={`${project.title} screenshot ${idx + 1}`}
-              className="w-full h-auto rounded-xl border border-border bg-surface-2"
-            />
-          ))}
+      {mainShot && (
+        <div className="my-8 space-y-3">
+          <ProjectImage
+            src={mainShot}
+            alt={`${project.title} screenshot 1`}
+            className="w-full h-auto aspect-video object-cover rounded-xl border border-border bg-surface-2"
+          />
+          {otherShots.length > 0 && (
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {otherShots.map((src, idx) => (
+                <ProjectImage
+                  key={src}
+                  src={src}
+                  alt={`${project.title} screenshot ${idx + 2}`}
+                  className="w-full h-auto aspect-video object-cover rounded-xl border border-border bg-surface-2"
+                />
+              ))}
+            </div>
+          )}
         </div>
       )}
 

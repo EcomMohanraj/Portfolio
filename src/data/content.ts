@@ -204,30 +204,40 @@ export const milkyMushroomProject = {
 
 export const tnBikeRaceProject = {
   id: "tn-bike-race",
-  title: "TN Bike Race – 3D Motorcycle Racing Game for Android",
+  title: "TN Bike Race — 3D bike racing game (Android, live on Google Play)",
   badge: "Live on Google Play",
   type: "Independent Project",
   position: "Game Developer",
   year: "2026 – Present",
   liveUrl: "https://play.google.com/store/apps/details?id=com.mohanraj.tnbikerace",
   liveLabel: "Get it on Google Play",
+  extraLinks: [{ label: "Privacy Policy", url: "/privacy.html" }],
   githubUrl: null,
   releaseStatus: null,
   description:
-    "A 3D bike racing game with 11 stages modelled on Tamil Nadu roads — city, highway, village, countryside, forest, hills, mountain, monsoon, desert and a tour — with career mode, garage, bike upgrades and Tamil-language signage.",
-  stack: ["Unity 6 (URP)", "C#", "Android (IL2CPP, ARM64, AAB)", "Google Play Console"],
-  displayBadges: ["Unity 6 (URP)", "C#", "Android (IL2CPP, ARM64, AAB)", "Google Play Console"],
+    "A 3D bike racing game across 11 Tamil Nadu stages — city traffic, highways, village lanes, hill hairpins, monsoon rain and desert roads.",
+  stack: ["Unity", "C#", "Android", "Game Dev", "AdMob", "Performance"],
+  displayBadges: ["Unity", "C#", "Android", "Game Dev", "AdMob", "Performance"],
   highlights: [
-    "AI riders with traffic-aware overtaking, checkpoints and respawns, live race positions, surface-based physics, touch and tilt steering",
-    "Optimized for budget Android phones (mesh merging, texture atlases, distance culling, shadow LODs) — up to 28% fewer draw calls per stage",
-    "Custom Unity editor tools for automated full-race soak tests, checkpoint probes and render-budget checks",
-    "Published on Google Play after closed testing with 12+ testers for 14+ days and 3 feedback-driven updates (v1.0.1–v1.0.3)",
+    "Unity 6 (URP) + C#, Android (AAB, Play App Signing)",
+    "11 stages, 4 bikes with upgrades and paint, 4 camera views including a rider cockpit view",
+    "AI riders that brake for slopes and hairpins; traffic that reacts to bikes",
+    "Performance budget for mid-range phones: every stage under 150 draw calls and 3 lakh triangles (LODs, occlusion trimming, impostor trees, shadow proxies), enforced by an automated LOD quality gate in the build",
+    "Automated test tools: soak tests, checkpoint probes, tilt-steering tests, triangle-budget reports",
+    "Google AdMob with UMP consent: rewarded (double coins, free coins) and interstitial ads that never show mid-race",
+    "Full Play Console release process: closed testing, Data safety, privacy policy, staged releases (v1.0 → v1.2.1 in November 2026)",
   ],
   impactStats: [] as string[],
   // Paths under public/. Files that don't exist at build time are not rendered.
+  // The first screenshot is shown as the large main image.
   images: {
     icon: "/projects/tnbikerace/icon.png",
-    screenshots: ["/projects/tnbikerace/shot1.png", "/projects/tnbikerace/shot2.png"],
+    screenshots: [
+      "/projects/tnbikerace/01-highway-rider.webp",
+      "/projects/tnbikerace/02-city-chase.webp",
+      "/projects/tnbikerace/03-tour-far.webp",
+      "/projects/tnbikerace/08-garage-sport.webp",
+    ],
   },
 };
 
@@ -325,6 +335,7 @@ export const skillsData = {
     "Mobile optimization",
     "Android (IL2CPP, AAB)",
     "Google Play Console",
+    "AdMob",
   ],
   testing: ["Playwright", "E2E Testing"],
   tools: ["Git", "GitHub", "Linux", "VS Code"],
